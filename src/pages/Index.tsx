@@ -309,7 +309,7 @@ const Index = () => {
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Mais de 500 salões de beleza transformaram seus negócios com nossa solução
+              Mais de 50 salões de beleza transformaram seus negócios com nossa solução
             </p>
           </div>
           
