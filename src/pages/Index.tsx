@@ -530,8 +530,8 @@ const Index = () => {
           <div className="flex justify-center gap-8 text-sm text-muted-foreground pt-4">
             <span>© 2025 Salão de Bolso</span>
             <span>•</span>
-            <span>Todos os direitos reservados.Feito por lucas Henrique</span>
-                    </div>
+            <span>Todos os direitos reservados. Feito por lucas Henrique</span>
+        </div>
         </div>
       </footer>
     </div>;
