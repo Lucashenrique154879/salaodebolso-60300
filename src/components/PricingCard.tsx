@@ -4,45 +4,59 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const PricingCard = () => {
   return (
-    <Card className="border-4 border-primary shadow-[var(--shadow-glow)] hover:shadow-[0_0_80px_hsl(270_95%_60%/0.4)] transition-all duration-500 relative overflow-hidden animate-scale-in hover:scale-105">
-      <div className="absolute top-0 right-0 bg-gradient-to-br from-secondary to-primary text-white px-8 py-2 text-sm font-bold transform rotate-12 translate-x-8 -translate-y-4 animate-pulse">
+    <Card className="border-4 border-primary shadow-[var(--shadow-premium)] hover:shadow-[0_0_100px_hsl(280_90%_55%/0.5)] transition-all duration-500 relative overflow-hidden animate-scale-in hover:scale-105 bg-white">
+      <div className="absolute top-0 right-0 bg-gradient-to-br from-secondary to-primary text-white px-10 py-3 text-base font-black transform rotate-12 translate-x-10 -translate-y-4 animate-pulse shadow-2xl">
         50% OFF
       </div>
-      <CardHeader className="bg-gradient-to-br from-accent to-white pb-8 pt-12">
-        <div className="text-center space-y-2">
-          <p className="text-muted-foreground line-through text-lg">De R$ 600,00</p>
-          <CardTitle className="text-5xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
+      <CardHeader className="bg-gradient-to-br from-primary/10 via-accent/50 to-secondary/10 pb-10 pt-16 relative">
+        <div className="text-center space-y-3">
+          <div className="inline-block px-4 py-1 bg-destructive/10 border border-destructive/30 rounded-full">
+            <p className="text-destructive line-through text-xl font-semibold">De R$ 600,00</p>
+          </div>
+          <CardTitle className="text-6xl font-black bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent drop-shadow-lg">
             R$ 299,90
           </CardTitle>
-          <p className="text-sm font-medium text-muted-foreground">Pagamento único</p>
+          <p className="text-base font-semibold text-foreground">Pagamento único • Sem mensalidades</p>
+          <div className="pt-2 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <span>Oferta por tempo limitado</span>
+          </div>
         </div>
       </CardHeader>
-      <CardContent className="pt-8 space-y-6">
-        <div className="space-y-3">
+      <CardContent className="pt-10 pb-8 space-y-8 relative">
+        <div className="space-y-4">
           {[
-            "Acesso completo a todas as funcionalidades",
-            "Atualizações gratuitas para sempre",
-            "Suporte técnico incluso",
-            "Sem mensalidades ou taxas ocultas",
-            "Agendamento online 24/7",
-            "Dashboard completo",
+            "✨ Acesso completo a todas as funcionalidades",
+            "🔄 Atualizações gratuitas para sempre",
+            "💬 Suporte técnico prioritário incluso",
+            "💰 Sem mensalidades ou taxas ocultas",
+            "📱 Agendamento online 24/7",
+            "📊 Dashboard e relatórios completos",
+            "👥 Gestão ilimitada de clientes",
+            "💳 Controle financeiro avançado",
           ].map((feature, index) => (
-            <div key={index} className="flex items-start gap-3">
-              <div className="mt-1 p-1 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20">
-                <Check className="w-4 h-4 text-primary" />
+            <div key={index} className="flex items-start gap-4 group">
+              <div className="mt-0.5 p-1.5 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:from-primary/30 group-hover:to-secondary/30 transition-all duration-300 group-hover:scale-110">
+                <Check className="w-5 h-5 text-primary" />
               </div>
-              <span className="text-foreground">{feature}</span>
+              <span className="text-foreground font-medium">{feature}</span>
             </div>
           ))}
         </div>
-        <Button 
-          variant="hero" 
-          size="lg" 
-          className="w-full text-lg h-14 hover:scale-105 transition-transform duration-300"
-          onClick={() => window.open(`https://wa.me/5533998542100?text=Olá! Quero adquirir o Salão de Bolso por R$ 299,90`, '_blank')}
-        >
-          Comprar Agora
-        </Button>
+        <div className="pt-4 space-y-4">
+          <Button 
+            variant="hero" 
+            size="lg" 
+            className="w-full text-xl h-16 font-bold hover:scale-105 transition-transform duration-300 shadow-lg"
+            onClick={() => window.open(`https://wa.me/5533998542100?text=Olá! Quero adquirir o Salão de Bolso por R$ 299,90`, '_blank')}
+          >
+            🚀 Comprar Agora - R$ 299,90
+          </Button>
+          <p className="text-center text-sm text-muted-foreground">
+            🔒 Pagamento 100% seguro • Garantia de 7 dias
+          </p>
+        </div>
       </CardContent>
     </Card>
   );
