@@ -465,11 +465,11 @@ const Index = () => {
           
           {/* Social Proof */}
           <div className="text-center mt-16 space-y-6">
-            <p className="text-muted-foreground">Junte-se a mais de 500 salões que já transformaram seus negócios</p>
+            <p className="text-muted-foreground">Junte-se a mais de 50 salões que já transformaram seus negócios</p>
             <div className="flex justify-center items-center gap-2">
               {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-primary text-primary" />)}
               <span className="text-foreground font-bold ml-2">4.9/5.0</span>
-              <span className="text-muted-foreground">(500+ avaliações)</span>
+              <span className="text-muted-foreground">(50+ avaliações)</span>
             </div>
           </div>
         </div>
@@ -531,6 +531,7 @@ const Index = () => {
             <span>© 2025 Salão de Bolso</span>
             <span>•</span>
             <span>Todos os direitos reservados</span>
+            </span> Feito por lucas Henrique</span>
           </div>
         </div>
       </footer>
