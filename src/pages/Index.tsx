@@ -170,7 +170,7 @@ const Index = () => {
                   <Star className="w-6 h-6 fill-primary text-primary" />
                   <div>
                     <div className="font-bold text-foreground">4.9/5.0</div>
-                    <div className="text-xs text-muted-foreground">500+ reviews</div>
+                    <div className="text-xs text-muted-foreground">50+ reviews</div>
                   </div>
                 </div>
               </div>
