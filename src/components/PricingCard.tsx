@@ -10,14 +10,33 @@ export const PricingCard = () => {
       </div>
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
       <CardHeader className="bg-gradient-to-br from-primary/10 via-accent/50 to-secondary/10 pb-10 pt-16 relative">
-        <div className="text-center space-y-3">
+        <div className="text-center space-y-6">
           <div className="inline-block px-4 py-1 bg-destructive/10 border border-destructive/30 rounded-full">
             <p className="text-destructive line-through text-xl font-semibold">De R$ 600,00</p>
           </div>
-          <CardTitle className="text-6xl font-black bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent drop-shadow-lg">
-            R$ 299,90
-          </CardTitle>
-          <p className="text-base font-semibold text-foreground">Pagamento único • Sem mensalidades</p>
+          
+          {/* À Vista Option */}
+          <div className="space-y-2 p-6 bg-white/80 rounded-2xl border-2 border-primary/30 shadow-lg">
+            <div className="inline-block px-3 py-1 bg-primary/10 rounded-full">
+              <span className="text-primary text-sm font-bold">💰 MELHOR PREÇO</span>
+            </div>
+            <CardTitle className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent drop-shadow-lg">
+              R$ 299,99
+            </CardTitle>
+            <p className="text-base font-bold text-foreground">Pagamento à vista • Sem mensalidades</p>
+          </div>
+
+          {/* Parcelado Option */}
+          <div className="space-y-2 p-6 bg-white/60 rounded-2xl border-2 border-border/50">
+            <div className="inline-block px-3 py-1 bg-secondary/10 rounded-full">
+              <span className="text-secondary text-sm font-bold">💳 PARCELADO</span>
+            </div>
+            <CardTitle className="text-4xl lg:text-5xl font-black text-foreground">
+              12x R$ 41,67
+            </CardTitle>
+            <p className="text-base font-semibold text-muted-foreground">Ou R$ 500,00 no cartão • Sem juros</p>
+          </div>
+
           <div className="pt-2 flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span>Oferta por tempo limitado</span>
@@ -49,9 +68,9 @@ export const PricingCard = () => {
             variant="hero" 
             size="lg" 
             className="w-full text-xl h-16 font-bold hover:scale-105 transition-transform duration-300 shadow-lg"
-            onClick={() => window.open(`https://wa.me/5533998542100?text=Olá! Quero adquirir o Salão de Bolso por R$ 299,90`, '_blank')}
+            onClick={() => window.open(`https://wa.me/5533998542100?text=Olá! Quero adquirir o Salão de Bolso`, '_blank')}
           >
-            🚀 Comprar Agora - R$ 299,90
+            🚀 Comprar Agora
           </Button>
           <p className="text-center text-sm text-muted-foreground">
             🔒 Pagamento 100% seguro • Garantia de 7 dias
