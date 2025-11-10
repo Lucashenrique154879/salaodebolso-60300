@@ -15,6 +15,17 @@ export const PricingCard = () => {
             <p className="text-destructive line-through text-xl font-semibold">De R$ 600,00</p>
           </div>
           
+          {/* Teste Grátis */}
+          <div className="space-y-2 p-6 bg-gradient-to-br from-accent/20 to-primary/10 rounded-2xl border-2 border-accent shadow-lg animate-pulse-slow">
+            <div className="inline-block px-3 py-1 bg-accent/20 rounded-full">
+              <span className="text-accent-foreground text-sm font-bold">🎁 EXPERIMENTE GRÁTIS</span>
+            </div>
+            <CardTitle className="text-5xl lg:text-6xl font-black text-foreground drop-shadow-lg">
+              7 Dias Grátis
+            </CardTitle>
+            <p className="text-base font-bold text-foreground">Teste completo • Sem compromisso • Sem cartão</p>
+          </div>
+
           {/* À Vista Option */}
           <div className="space-y-2 p-6 bg-white/80 rounded-2xl border-2 border-primary/30 shadow-lg">
             <div className="inline-block px-3 py-1 bg-primary/10 rounded-full">
@@ -68,9 +79,17 @@ export const PricingCard = () => {
             variant="hero" 
             size="lg" 
             className="w-full text-xl h-16 font-bold hover:scale-105 transition-transform duration-300 shadow-lg"
+            onClick={() => window.open(`https://lilac-luxe-salon-100.vercel.app/`, '_blank')}
+          >
+            🎁 Começar Teste Grátis
+          </Button>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="w-full text-xl h-16 font-bold hover:scale-105 transition-transform duration-300"
             onClick={() => window.open(`https://wa.me/5533998542100?text=Olá! Quero adquirir o Salão de Bolso`, '_blank')}
           >
-            🚀 Comprar Agora
+            💬 Falar com Vendedor
           </Button>
           <p className="text-center text-sm text-muted-foreground">
             🔒 Pagamento 100% seguro • Garantia de 7 dias
