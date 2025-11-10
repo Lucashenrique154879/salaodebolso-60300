@@ -6,6 +6,7 @@ import { FAQItem } from "@/components/FAQItem";
 import { Accordion } from "@/components/ui/accordion";
 import { useState } from "react";
 import { Calendar, Users, DollarSign, Award, Clock, Scissors, Settings, TrendingUp, Smartphone, Mail, Phone, CheckCircle, BarChart3, ChevronLeft, ChevronRight, Shield, Zap, Star, Users2, Sparkles, Target, X } from "lucide-react";
+import SentimentAnalyzer from "@/components/SentimentAnalyzer";
 import heroImage from "@/assets/hero-image.jpg";
 import logoImage from "@/assets/logo.jpg";
 import dashboardImg from "@/assets/screenshots/dashboard.png";
@@ -439,6 +440,26 @@ const Index = () => {
             </Accordion>
           </div>
         </div>
+      </section>
+
+      {/* AI Demo Section */}
+      <section className="py-20 px-4 bg-gradient-to-b from-background to-muted/30">
+        <div className="max-w-7xl mx-auto text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full border border-primary/20 mb-4">
+            <Sparkles className="w-5 h-5 text-primary" />
+            <span className="text-primary font-bold">Tecnologia de IA</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Experimente nossa{" "}
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Inteligência Artificial
+            </span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Veja como a IA pode analisar sentimentos em textos de forma instantânea
+          </p>
+        </div>
+        <SentimentAnalyzer />
       </section>
 
       {/* Pricing Section */}
