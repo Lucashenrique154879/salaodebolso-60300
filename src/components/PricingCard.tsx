@@ -21,7 +21,7 @@ export const PricingCard = () => {
               <span className="text-primary text-sm font-bold">💰 MELHOR PREÇO</span>
             </div>
             <CardTitle className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent drop-shadow-lg">
-              R$ 299,99
+              R$ 300,00
             </CardTitle>
             <p className="text-base font-bold text-foreground">Pagamento à vista • Sem mensalidades</p>
           </div>
@@ -32,9 +32,9 @@ export const PricingCard = () => {
               <span className="text-secondary text-sm font-bold">💳 PARCELADO</span>
             </div>
             <CardTitle className="text-4xl lg:text-5xl font-black text-foreground">
-              12x R$ 41,67
+              12x R$ 25,00
             </CardTitle>
-            <p className="text-base font-semibold text-muted-foreground">Ou R$ 500,00 no cartão • Sem juros</p>
+            <p className="text-base font-semibold text-muted-foreground">Ou R$ 300,00 no cartão • Sem juros</p>
           </div>
 
           <div className="pt-2 flex items-center justify-center gap-2 text-sm text-muted-foreground">
