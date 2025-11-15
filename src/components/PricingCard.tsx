@@ -3,16 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export const PricingCard = () => {
   return <Card className="border-4 border-primary shadow-[var(--shadow-premium)] hover:shadow-[0_0_100px_hsl(280_90%_55%/0.5)] transition-all duration-500 relative overflow-hidden animate-scale-in hover:scale-105 bg-white">
-      <div className="absolute top-0 right-0 bg-gradient-to-br from-secondary to-primary text-white px-10 py-3 text-base font-black transform rotate-12 translate-x-10 -translate-y-4 animate-pulse shadow-2xl">
-        50% OFF
-      </div>
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
       <CardHeader className="bg-gradient-to-br from-primary/10 via-accent/50 to-secondary/10 pb-10 pt-16 relative">
         <div className="text-center space-y-6">
-          <div className="inline-block px-4 py-1 bg-destructive/10 border border-destructive/30 rounded-full">
-            <p className="text-destructive line-through text-xl font-semibold">De R$ 600,00</p>
-          </div>
-          
           {/* Teste Grátis */}
           <div className="space-y-2 p-6 bg-gradient-to-br from-accent/20 to-primary/10 rounded-2xl border-2 border-accent shadow-lg animate-pulse-slow">
             <div className="inline-block px-3 py-1 bg-accent/20 rounded-full">
@@ -24,31 +17,31 @@ export const PricingCard = () => {
             <p className="text-base font-bold text-foreground">Teste completo • Sem compromisso • Sem cartão</p>
           </div>
 
-          {/* À Vista Option */}
+          {/* Assinatura Mensal */}
           <div className="space-y-2 p-6 bg-white/80 rounded-2xl border-2 border-primary/30 shadow-lg">
             <div className="inline-block px-3 py-1 bg-primary/10 rounded-full">
-              <span className="text-primary text-sm font-bold">💰 MELHOR PREÇO</span>
+              <span className="text-primary text-sm font-bold">🔄 ASSINATURA</span>
             </div>
             <CardTitle className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent drop-shadow-lg">
-              R$ 300,00
+              R$ 20/mês
             </CardTitle>
-            <p className="text-base font-bold text-foreground">Pagamento à vista • Sem mensalidades</p>
+            <p className="text-base font-bold text-foreground">Pagamento mensal • Cancele quando quiser</p>
           </div>
 
-          {/* Parcelado Option */}
-          <div className="space-y-2 p-6 bg-white/60 rounded-2xl border-2 border-border/50">
+          {/* Vitalício */}
+          <div className="space-y-2 p-6 bg-white/60 rounded-2xl border-2 border-secondary/50 shadow-lg">
             <div className="inline-block px-3 py-1 bg-secondary/10 rounded-full">
-              <span className="text-secondary text-sm font-bold">💳 PARCELADO</span>
+              <span className="text-secondary text-sm font-bold">💎 VITALÍCIO</span>
             </div>
             <CardTitle className="text-4xl lg:text-5xl font-black text-foreground">
-              12x R$ 25,00
+              R$ 300,00
             </CardTitle>
-            <p className="text-base font-semibold text-muted-foreground">Ou R$ 300,00 no cartão • Com juros do mercado pago</p>
+            <p className="text-base font-semibold text-muted-foreground">Pagamento único • Acesso para sempre</p>
           </div>
 
           <div className="pt-2 flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span>Oferta por tempo limitado</span>
+            <span>Escolha o melhor plano para você</span>
           </div>
         </div>
       </CardHeader>
