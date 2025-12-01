@@ -28,15 +28,22 @@ export const PricingCard = () => {
             <p className="text-base font-bold text-foreground">Pagamento mensal • Cancele quando quiser</p>
           </div>
 
-          {/* Vitalício */}
-          <div className="space-y-2 p-6 bg-white/60 rounded-2xl border-2 border-secondary/50 shadow-lg">
-            <div className="inline-block px-3 py-1 bg-secondary/10 rounded-full">
-              <span className="text-secondary text-sm font-bold">💎 VITALÍCIO</span>
+          {/* Vitalício - BLACK FRIDAY */}
+          <div className="space-y-2 p-6 bg-gradient-to-br from-black via-gray-900 to-black rounded-2xl border-4 border-yellow-400 shadow-[0_0_30px_rgba(255,215,0,0.5)] relative overflow-hidden animate-pulse-slow">
+            <div className="absolute top-0 right-0 bg-red-600 text-white px-4 py-1 text-xs font-black transform rotate-12 translate-x-2 -translate-y-1 shadow-lg">
+              BLACK FRIDAY
             </div>
-            <CardTitle className="text-4xl lg:text-5xl font-black text-foreground">
-              R$ 300,00
-            </CardTitle>
-            <p className="text-base font-semibold text-muted-foreground">Pagamento único • Acesso para sempre</p>
+            <div className="inline-block px-3 py-1 bg-yellow-400/20 rounded-full">
+              <span className="text-yellow-400 text-sm font-black">🔥 OFERTA ESPECIAL 🔥</span>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-2xl text-gray-500 line-through font-bold">R$ 300</span>
+              <CardTitle className="text-5xl lg:text-6xl font-black text-yellow-400 drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">
+                R$ 100
+              </CardTitle>
+            </div>
+            <p className="text-base font-bold text-yellow-300">💎 Pagamento único • Acesso VITALÍCIO</p>
+            <p className="text-xs text-red-400 font-semibold animate-pulse">⚡ Apenas na Black Friday - Tempo limitado!</p>
           </div>
 
           <div className="pt-2 flex items-center justify-center gap-2 text-sm text-muted-foreground">
