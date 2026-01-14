@@ -37,9 +37,9 @@ export const PricingCard = () => {
               <span className="text-yellow-400 text-sm font-black">🔥 OFERTA ESPECIAL 🔥</span>
             </div>
             <div className="flex items-center justify-center gap-3">
-              <span className="text-2xl text-gray-500 line-through font-bold">R$ 300</span>
+              <span className="text-2xl text-gray-500 line-through font-bold">R$ 600</span>
               <CardTitle className="text-5xl lg:text-6xl font-black text-yellow-400 drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">
-                R$ 100
+                R$ 300
               </CardTitle>
             </div>
             <p className="text-base font-bold text-yellow-300">💎 Pagamento único • Acesso VITALÍCIO</p>
