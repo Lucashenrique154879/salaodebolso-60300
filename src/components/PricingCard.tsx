@@ -23,27 +23,20 @@ export const PricingCard = () => {
               <span className="text-primary text-sm font-bold">🔄 ASSINATURA</span>
             </div>
             <CardTitle className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent drop-shadow-lg">
-              R$ 20/mês
+              R$ 19,99/mês
             </CardTitle>
             <p className="text-base font-bold text-foreground">Pagamento mensal • Cancele quando quiser</p>
           </div>
 
-          {/* Vitalício - BLACK FRIDAY */}
-          <div className="space-y-2 p-6 bg-gradient-to-br from-black via-gray-900 to-black rounded-2xl border-4 border-yellow-400 shadow-[0_0_30px_rgba(255,215,0,0.5)] relative overflow-hidden animate-pulse-slow">
-            <div className="absolute top-0 right-0 bg-red-600 text-white px-4 py-1 text-xs font-black transform rotate-12 translate-x-2 -translate-y-1 shadow-lg">
-              BLACK FRIDAY
+          {/* Vitalício */}
+          <div className="space-y-2 p-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl border-2 border-primary/30 shadow-lg">
+            <div className="inline-block px-3 py-1 bg-primary/10 rounded-full">
+              <span className="text-primary text-sm font-black">💎 VITALÍCIO</span>
             </div>
-            <div className="inline-block px-3 py-1 bg-yellow-400/20 rounded-full">
-              <span className="text-yellow-400 text-sm font-black">🔥 OFERTA ESPECIAL 🔥</span>
-            </div>
-            <div className="flex items-center justify-center gap-3">
-              <span className="text-2xl text-gray-500 line-through font-bold">R$ 600</span>
-              <CardTitle className="text-5xl lg:text-6xl font-black text-yellow-400 drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">
-                R$ 300
-              </CardTitle>
-            </div>
-            <p className="text-base font-bold text-yellow-300">💎 Pagamento único • Acesso VITALÍCIO</p>
-            <p className="text-xs text-red-400 font-semibold animate-pulse">⚡ Apenas na Black Friday - Tempo limitado!</p>
+            <CardTitle className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent drop-shadow-lg">
+              R$ 600
+            </CardTitle>
+            <p className="text-base font-bold text-foreground">Pagamento único • Acesso para sempre</p>
           </div>
 
           <div className="pt-2 flex items-center justify-center gap-2 text-sm text-muted-foreground">
