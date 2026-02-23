@@ -5,7 +5,7 @@ import { TestimonialCard } from "@/components/TestimonialCard";
 import { FAQItem } from "@/components/FAQItem";
 import { Accordion } from "@/components/ui/accordion";
 import { useState } from "react";
-import { Calendar, Users, DollarSign, Award, Clock, Scissors, Settings, TrendingUp, Smartphone, Mail, Phone, CheckCircle, BarChart3, ChevronLeft, ChevronRight, Shield, Zap, Star, Users2, Sparkles, Target, X } from "lucide-react";
+import { Calendar, Users, DollarSign, Award, Clock, Scissors, Settings, TrendingUp, Smartphone, Mail, Phone, CheckCircle, BarChart3, ChevronLeft, ChevronRight, Shield, Zap, Star, Users2, Sparkles, Target, X, BrainCircuit } from "lucide-react";
 import SentimentAnalyzer from "@/components/SentimentAnalyzer";
 import heroImage from "@/assets/hero-image.jpg";
 import logoImage from "@/assets/logo.jpg";
@@ -243,6 +243,7 @@ const Index = () => {
             <FeatureCard icon={Scissors} title="Catálogo de Serviços" description="Gerencie todos os serviços com preços, duração estimada e análise detalhada dos serviços mais vendidos e lucrativos." />
             <FeatureCard icon={Settings} title="Configurações Avançadas" description="Defina horários de funcionamento personalizados, intervalos entre atendimentos e notificações customizadas para seu negócio." />
             <FeatureCard icon={BarChart3} title="Relatórios e Análises" description="Dashboards em tempo real, identificação de serviços mais lucrativos, previsão de recebimentos e métricas de desempenho completas." />
+            <FeatureCard icon={BrainCircuit} title="Assistente de IA" description="Inteligência artificial integrada que analisa seus dados e dá dicas de financeiro, marketing, clientes e produtos. Seu consultor virtual completo 24/7." />
           </div>
         </div>
       </section>
