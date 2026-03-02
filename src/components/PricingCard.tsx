@@ -33,10 +33,13 @@ export const PricingCard = () => {
             <div className="inline-block px-3 py-1 bg-primary/10 rounded-full">
               <span className="text-primary text-sm font-black">💎 VITALÍCIO</span>
             </div>
-            <CardTitle className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent drop-shadow-lg">
-              R$ 600
-            </CardTitle>
-            <p className="text-base font-bold text-foreground">Pagamento único • Acesso para sempre</p>
+            <div className="flex items-center justify-center gap-3">
+              <span className="text-2xl lg:text-3xl font-bold text-muted-foreground line-through">R$ 635</span>
+              <CardTitle className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent drop-shadow-lg">
+                R$ 350
+              </CardTitle>
+            </div>
+            <p className="text-base font-bold text-foreground">🔥 Promoção! Pagamento único • Acesso para sempre</p>
           </div>
 
           <div className="pt-2 flex items-center justify-center gap-2 text-sm text-muted-foreground">
