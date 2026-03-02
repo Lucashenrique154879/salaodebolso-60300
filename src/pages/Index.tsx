@@ -8,7 +8,7 @@ import { useState } from "react";
 import { Calendar, Users, DollarSign, Award, Clock, Scissors, Settings, TrendingUp, Smartphone, Mail, Phone, CheckCircle, BarChart3, ChevronLeft, ChevronRight, Shield, Zap, Star, Users2, Sparkles, Target, X, BrainCircuit } from "lucide-react";
 import SentimentAnalyzer from "@/components/SentimentAnalyzer";
 import heroImage from "@/assets/hero-image.jpg";
-import logoImage from "@/assets/logo.jpg";
+import logoImage from "@/assets/logo.png";
 import dashboardImg from "@/assets/screenshots/dashboard.png";
 import agendamentosImg from "@/assets/screenshots/agendamentos.png";
 import clientesImg from "@/assets/screenshots/clientes.png";
