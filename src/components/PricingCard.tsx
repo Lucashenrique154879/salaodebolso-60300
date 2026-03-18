@@ -58,7 +58,7 @@ export const PricingCard = () => {
             </div>)}
         </div>
         <div className="pt-4 space-y-4">
-          <Button variant="hero" size="lg" className="w-full text-xl h-16 font-bold hover:scale-105 transition-transform duration-300 shadow-lg" onClick={() => window.open(`https://lilac-luxe-salon-100.vercel.app/`, '_blank')}>
+          <Button variant="hero" size="lg" className="w-full text-xl h-16 font-bold hover:scale-105 transition-transform duration-300 shadow-lg" onClick={() => window.open(`https://salaodebolsoapp.shop`, '_blank')}>
             🎁 Começar Teste Grátis
           </Button>
           <Button variant="outline" size="lg" className="w-full text-xl h-16 font-bold hover:scale-105 transition-transform duration-300" onClick={() => window.open(`https://wa.me/5533998542100?text=Olá! Quero adquirir o Salão de Bolso`, '_blank')}>
