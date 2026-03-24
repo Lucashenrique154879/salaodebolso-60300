@@ -430,7 +430,7 @@ const Index = () => {
           
           <div className="max-w-4xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
-              <FAQItem value="item-1" question="Como funciona o pagamento único?" answer="Você paga apenas uma vez R$ 299,90 e tem acesso completo ao sistema para sempre. Sem mensalidades, sem taxas escondidas, sem surpresas. Todas as atualizações futuras estão incluídas gratuitamente." />
+              <FAQItem value="item-1" question="Como funciona o pagamento único?" answer="Você paga apenas uma vez R$ 197,00 e tem acesso completo ao sistema para sempre. Sem mensalidades, sem taxas escondidas, sem surpresas. Todas as atualizações futuras estão incluídas gratuitamente." />
               <FAQItem value="item-2" question="O sistema funciona no celular?" answer="Sim! O sistema é 100% responsivo e funciona perfeitamente em computadores, tablets e celulares. Você pode até instalar como um aplicativo no seu celular para acesso ainda mais rápido e com função offline." />
               <FAQItem value="item-3" question="Preciso de conhecimentos técnicos para usar?" answer="Não! O sistema foi desenvolvido para ser extremamente intuitivo. Qualquer pessoa consegue usar sem dificuldades. Além disso, oferecemos suporte técnico completo para te ajudar em qualquer dúvida." />
               <FAQItem value="item-4" question="Posso usar em mais de um dispositivo?" answer="Sim! Você pode acessar o sistema de quantos dispositivos quiser - computador, tablet, celular. Todos os dados ficam sincronizados automaticamente em tempo real." />
