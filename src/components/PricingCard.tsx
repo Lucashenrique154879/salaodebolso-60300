@@ -17,34 +17,23 @@ export const PricingCard = () => {
             <p className="text-base font-bold text-foreground">Teste completo • Sem compromisso • Sem cartão</p>
           </div>
 
-          {/* Assinatura Mensal */}
-          <div className="space-y-2 p-6 bg-white/80 rounded-2xl border-2 border-primary/30 shadow-lg">
-            <div className="inline-block px-3 py-1 bg-primary/10 rounded-full">
-              <span className="text-primary text-sm font-bold">🔄 ASSINATURA</span>
-            </div>
-            <CardTitle className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent drop-shadow-lg">
-              R$ 19,99/mês
-            </CardTitle>
-            <p className="text-base font-bold text-foreground">Pagamento mensal • Cancele quando quiser</p>
-          </div>
-
-          {/* Vitalício */}
+          {/* Pagamento Único */}
           <div className="space-y-2 p-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl border-2 border-primary/30 shadow-lg">
             <div className="inline-block px-3 py-1 bg-primary/10 rounded-full">
-              <span className="text-primary text-sm font-black">💎 VITALÍCIO</span>
+              <span className="text-primary text-sm font-black">💎 PAGAMENTO ÚNICO</span>
             </div>
             <div className="flex items-center justify-center gap-3">
-              <span className="text-2xl lg:text-3xl font-bold text-muted-foreground line-through">R$ 635</span>
+              <span className="text-2xl lg:text-3xl font-bold text-muted-foreground line-through">R$ 482</span>
               <CardTitle className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent drop-shadow-lg">
-                R$ 350
+                R$ 197
               </CardTitle>
             </div>
-            <p className="text-base font-bold text-foreground">🔥 Promoção! Pagamento único • Acesso para sempre</p>
+            <p className="text-base font-bold text-foreground">🔥 Pagamento único • Acesso para sempre • Atualizações incluídas</p>
           </div>
 
           <div className="pt-2 flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span>Escolha o melhor plano para você</span>
+            <span>Compre uma vez e use para sempre</span>
           </div>
         </div>
       </CardHeader>
