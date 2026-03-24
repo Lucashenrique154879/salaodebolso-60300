@@ -483,6 +483,26 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Ferramentas Bônus */}
+      <section className="py-20 px-4 bg-gradient-to-b from-background to-muted/30">
+        <div className="max-w-7xl mx-auto text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full border border-primary/20 mb-4">
+            <Sparkles className="w-5 h-5 text-primary" />
+            <span className="text-primary font-bold">Ferramentas Bônus</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Experimente nossa{" "}
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Inteligência Artificial
+            </span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Veja como a IA pode analisar sentimentos em textos de forma instantânea
+          </p>
+        </div>
+        <SentimentAnalyzer />
+      </section>
+
       {/* Final CTA */}
       <section className="py-24 px-4 bg-gradient-to-r from-primary via-secondary to-primary text-white">
         <div className="container mx-auto text-center space-y-8">
