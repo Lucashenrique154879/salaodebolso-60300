@@ -5,7 +5,7 @@ import { toast } from "@/hooks/use-toast";
 import logoImage from "@/assets/logo.png";
 import { Phone, Mail } from "lucide-react";
 
-const AFFILIATE_LINK = "https://app.cakto.com.br/affiliate/invite/2a65ce9f-0efe-46a6-ab5a-e08f02b2ed2c";
+const AFFILIATE_LINK = "https://app.cakto.com.br";
 
 const scripts = [
   {
