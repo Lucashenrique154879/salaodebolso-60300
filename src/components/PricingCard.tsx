@@ -39,7 +39,7 @@ export const PricingCard = () => {
       </CardHeader>
       <CardContent className="pt-10 pb-8 space-y-8 relative">
         <div className="space-y-4">
-          {["✨ Acesso completo a todas as funcionalidades", "🤖 Assistente de IA integrado", "🔄 Atualizações gratuitas para sempre", "💬 Suporte técnico prioritário incluso", "📱 Agendamento online 24/7", "📊 Dashboard e relatórios completos", "👥 Gestão ilimitada de clientes", "💳 Controle financeiro avançado"].map((feature, index) => <div key={index} className="flex items-start gap-4 group">
+          {["✨ Acesso completo a todas as funcionalidades", "🔄 Atualizações gratuitas para sempre", "💬 Suporte técnico prioritário incluso", "📱 Agendamento online 24/7", "📊 Dashboard e relatórios completos", "👥 Gestão ilimitada de clientes", "💳 Controle financeiro avançado", "🧠 Assistente de IA com dicas de gestão"].map((feature, index) => <div key={index} className="flex items-start gap-4 group">
               <div className="mt-0.5 p-1.5 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:from-primary/30 group-hover:to-secondary/30 transition-all duration-300 group-hover:scale-110">
                 <Check className="w-5 h-5 text-primary" />
               </div>

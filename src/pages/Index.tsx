@@ -19,7 +19,7 @@ const Index = () => {
   const [currentScreenshot, setCurrentScreenshot] = useState(0);
   const screenshots = [{
     img: dashboardImg,
-    title: "Dashboard Completo",
+    title: "Dashboard — Meu Salão",
     desc: "Visualize tudo em tempo real com gráficos e métricas"
   }, {
     img: agendamentosImg,
@@ -68,9 +68,14 @@ const Index = () => {
               Salão de Bolso
             </span>
           </div>
-          <Button variant="hero" size="lg" onClick={scrollToPricing} className="hover:scale-105 transition-transform duration-300 shadow-lg">
-            🔥 Ver Oferta
-          </Button>
+          <div className="flex items-center gap-3">
+            <a href="/afiliados" className="text-primary font-bold hover:underline transition-all">
+              Seja Afiliado
+            </a>
+            <Button variant="hero" size="lg" onClick={scrollToPricing} className="hover:scale-105 transition-transform duration-300 shadow-lg">
+              🔥 Ver Oferta
+            </Button>
+          </div>
         </nav>
       </header>
 
@@ -316,10 +321,11 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            <TestimonialCard name="Maria Silva" role="Salão Beleza Pura - SP" content="Meu faturamento aumentou 40% em 3 meses! O programa de fidelidade trouxe muitos clientes de volta. Melhor investimento que fiz no salão." rating={5} />
-            <TestimonialCard name="João Santos" role="Barbearia Style - RJ" content="Economizo mais de 10 horas por semana que gastava organizando agenda manualmente. Agora os clientes agendam sozinhos e eu foco no atendimento." rating={5} />
-            <TestimonialCard name="Ana Oliveira" role="Studio Ana Hair - MG" content="Sistema incrível! O controle financeiro me mostrou onde estava perdendo dinheiro. Consegui aumentar minha margem de lucro em 30%." rating={5} />
+            <TestimonialCard name="Maria Silva" role="Salão Beleza Pura - SP" content="Meu faturamento aumentou 40% em 3 meses! O programa de fidelidade trouxe muitos clientes de volta. Melhor investimento que fiz no salão." rating={5} image="placeholder" />
+            <TestimonialCard name="João Santos" role="Barbearia Style - RJ" content="Economizo mais de 10 horas por semana que gastava organizando agenda manualmente. Agora os clientes agendam sozinhos e eu foco no atendimento." rating={5} image="placeholder" />
+            <TestimonialCard name="Ana Oliveira" role="Studio Ana Hair - MG" content="Sistema incrível! O controle financeiro me mostrou onde estava perdendo dinheiro. Consegui aumentar minha margem de lucro em 30%." rating={5} image="placeholder" />
           </div>
+          <p className="text-center text-sm text-muted-foreground mt-8 italic">*Resultados individuais podem variar</p>
         </div>
       </section>
 
@@ -443,26 +449,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* AI Demo Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-background to-muted/30">
-        <div className="max-w-7xl mx-auto text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full border border-primary/20 mb-4">
-            <Sparkles className="w-5 h-5 text-primary" />
-            <span className="text-primary font-bold">Tecnologia de IA</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Experimente nossa{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Inteligência Artificial
-            </span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Veja como a IA pode analisar sentimentos em textos de forma instantânea
-          </p>
-        </div>
-        <SentimentAnalyzer />
-      </section>
-
       {/* Pricing Section */}
       <section id="pricing" className="py-24 px-4 bg-gradient-to-br from-accent/20 via-background to-accent/20">
         <div className="container mx-auto">
@@ -504,7 +490,7 @@ const Index = () => {
             Pronto para Transformar<br />seu Salão de Beleza?
           </h2>
           <p className="text-xl lg:text-2xl opacity-90 max-w-3xl mx-auto">
-            Junte-se a centenas de salões que já aumentaram sua receita em até 40% e economizam mais de 10 horas por semana
+            Junte-se a mais de 50 salões que já aumentaram sua receita em até 40% e economizam mais de 10 horas por semana
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center pt-6">
             <Button size="lg" variant="secondary" className="gap-2 text-xl h-16 px-10 font-bold hover:scale-105 transition-transform duration-300 shadow-2xl" onClick={scrollToPricing}>
