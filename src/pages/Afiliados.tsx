@@ -1,53 +1,51 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, X, Copy, ArrowLeft, DollarSign, Link2, Share2, Banknote, Infinity, Smartphone, Users, BarChart3, Calendar } from "lucide-react";
+import { Check, X, Copy, ArrowLeft, DollarSign, Link2, Banknote, Infinity, Target, Trophy, Star } from "lucide-react";
+import { Slider } from "@/components/ui/slider";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { toast } from "@/hooks/use-toast";
 import logoImage from "@/assets/logo.png";
-import { Phone, Mail } from "lucide-react";
 
 const AFFILIATE_LINK = "https://app.cakto.com.br/affiliate/invite/2a65ce9f-0efe-46a6-ab5a-e08f02b2ed2c";
 
 const scripts = [
   {
     label: "WhatsApp direto",
-    text: `Oi [Nome]! Tudo bem?
-Você trabalha em salão ou conhece alguém da área de beleza?
-Encontrei um app de gestão para salão chamado Salão de Bolso — controla agendamento, clientes e financeiro pelo celular. É acesso vitalício por R$197, sem mensalidade.
-Achei muito útil e achei que podia te interessar (ou alguém que você conhece):
-👉 [SEU LINK DE AFILIADO]`,
+    text: `Oi [Nome]! Tudo bem?\nVocê trabalha em salão ou conhece alguém da área de beleza?\nEncontrei um app de gestão para salão chamado Salão de Bolso — controla agendamento, clientes e financeiro pelo celular. É acesso vitalício por R$197, sem mensalidade.\nAchei muito útil e achei que podia te interessar (ou alguém que você conhece):\n👉 [SEU LINK DE AFILIADO]`,
   },
   {
     label: "Instagram e TikTok",
-    text: `Se você tem salão ou trabalha com beleza, precisa conhecer isso 👇
-O Salão de Bolso é um app que organiza toda a gestão do seu salão no celular:
-📅 Agendamentos
-👥 Clientes
-💰 Financeiro
-Sem papel. Sem confusão. E o melhor: é pagamento único, sem mensalidade.
-Tô indicando porque realmente vale — link na bio (ou nos comentários):
-👉 [SEU LINK DE AFILIADO]
-#salao #salaodebeleza #manicure #cabeleireira #gestao`,
+    text: `Se você tem salão ou trabalha com beleza, precisa conhecer isso 👇\nO Salão de Bolso é um app que organiza toda a gestão do seu salão no celular:\n📅 Agendamentos\n👥 Clientes\n💰 Financeiro\nSem papel. Sem confusão. E o melhor: é pagamento único, sem mensalidade.\nTô indicando porque realmente vale — link na bio (ou nos comentários):\n👉 [SEU LINK DE AFILIADO]\n#salao #salaodebeleza #manicure #cabeleireira #gestao`,
   },
   {
     label: "Grupos Facebook/WhatsApp",
-    text: `Olá pessoal! Quem trabalha em salão ou conhece alguém da área? 💇‍♀️
-Descobri um app chamado Salão de Bolso que organiza tudo: agendamentos, clientes e financeiro — direto no celular, sem mensalidade.
-Tô compartilhando porque achei que pode ajudar muita gente aqui do grupo:
-👉 [SEU LINK DE AFILIADO]
-Qualquer dúvida é só perguntar!`,
+    text: `Olá pessoal! Quem trabalha em salão ou conhece alguém da área? 💇‍♀️\nDescobri um app chamado Salão de Bolso que organiza tudo: agendamentos, clientes e financeiro — direto no celular, sem mensalidade.\nTô compartilhando porque achei que pode ajudar muita gente aqui do grupo:\n👉 [SEU LINK DE AFILIADO]\nQualquer dúvida é só perguntar!`,
   },
   {
     label: "Stories curto",
-    text: `[Mostre a tela do app funcionando]
-Narração: Esse app organiza toda a gestão do salão no celular — agendamento, clientes e financeiro. Pagamento único, sem mensalidade. Link nos comentários!`,
+    text: `[Mostre a tela do app funcionando]\nNarração: Esse app organiza toda a gestão do salão no celular — agendamento, clientes e financeiro. Pagamento único, sem mensalidade. Link nos comentários!`,
   },
 ];
 
+const faqItems = [
+  { q: "Quando recebo minha comissão?", a: "O pagamento é processado automaticamente pelo Cakto após a confirmação da venda. O prazo depende das configurações do seu saque na plataforma." },
+  { q: "Preciso ter CNPJ para ser afiliado?", a: "Não. Qualquer pessoa física pode se cadastrar como afiliado no Cakto e receber comissões normalmente." },
+  { q: "Como sei que a venda foi feita pelo meu link?", a: "O Cakto rastreia automaticamente cada clique no seu link. Você consegue ver todas as suas vendas e comissões em tempo real no painel do afiliado." },
+  { q: "Por quanto tempo meu link fica ativo?", a: "Seu link de afiliado fica ativo indefinidamente enquanto você estiver cadastrado no programa." },
+  { q: "Posso divulgar em qualquer canal?", a: "Sim — WhatsApp, Instagram, TikTok, Facebook, grupos, pessoalmente. O único limite é não usar spam ou informações falsas sobre o produto." },
+  { q: "Tem algum custo para ser afiliado?", a: "Nenhum. O cadastro é gratuito e você não paga nada para divulgar." },
+];
+
 const Afiliados = () => {
+  const [salesPerWeek, setSalesPerWeek] = useState(3);
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
     toast({ title: "Copiado!", description: "Texto copiado para a área de transferência" });
   };
+
+  const formatCurrency = (value: number) =>
+    value.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 0 });
 
   return (
     <div className="min-h-screen bg-background">
@@ -94,6 +92,15 @@ const Afiliados = () => {
             ))}
           </div>
 
+          {/* Prova social */}
+          <div className="max-w-2xl mx-auto bg-green-800 text-white rounded-2xl px-6 py-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium shadow-lg">
+            <span className="flex items-center gap-1"><Star className="w-4 h-4 text-yellow-400 fill-yellow-400" /> 4.9/5.0</span>
+            <span className="opacity-60">·</span>
+            <span>50+ clientes satisfeitos</span>
+            <span className="opacity-60">·</span>
+            <span>Pagamento garantido pelo Cakto</span>
+          </div>
+
           <Button
             size="lg"
             className="text-xl h-16 px-10 font-bold bg-green-600 hover:bg-green-700 text-white shadow-xl hover:scale-105 transition-all"
@@ -125,6 +132,75 @@ const Afiliados = () => {
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Por que vende */}
+      <section className="py-24 px-4 bg-gradient-to-br from-green-50 to-background">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-3xl lg:text-5xl font-black text-center mb-16">
+            Por que o Salão de Bolso é <span className="text-green-600">fácil de vender</span>
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { icon: Target, emoji: "🎯", title: "1,5 milhão de salões no Brasil", desc: "A maioria ainda usa papel ou WhatsApp para agendar. É um mercado praticamente virgem para tecnologia." },
+              { icon: DollarSign, emoji: "💰", title: "R$197 — qualquer profissional paga", desc: "É menos que um dia de trabalho para a maioria dos clientes. Objeção de preço é rara nesse nicho." },
+              { icon: Trophy, emoji: "🏆", title: "Produto nichado e diferenciado", desc: "Não existe sistema de gestão assim focado em salões pequenos com esse preço e sem mensalidade." },
+            ].map((card, i) => (
+              <Card key={i} className="border-2 border-green-100 hover:border-green-300 hover:shadow-xl transition-all">
+                <CardContent className="p-8 text-center space-y-4">
+                  <span className="text-4xl">{card.emoji}</span>
+                  <h3 className="text-xl font-black">{card.title}</h3>
+                  <p className="text-muted-foreground">{card.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Calculadora de ganhos */}
+      <section className="py-24 px-4 bg-white">
+        <div className="container mx-auto max-w-3xl text-center space-y-8">
+          <h2 className="text-3xl lg:text-5xl font-black">
+            Calcule seus <span className="text-green-600">ganhos</span> como afiliado
+          </h2>
+          <p className="text-xl text-muted-foreground">
+            Arraste o controle e veja quanto você pode ganhar por mês
+          </p>
+
+          <div className="bg-green-50 rounded-2xl p-8 border-2 border-green-200 space-y-8">
+            <div className="space-y-4">
+              <label className="text-lg font-bold">
+                Vendas por semana: <span className="text-green-600 text-2xl">{salesPerWeek}</span>
+              </label>
+              <Slider
+                value={[salesPerWeek]}
+                onValueChange={(v) => setSalesPerWeek(v[0])}
+                min={1}
+                max={20}
+                step={1}
+                className="w-full"
+              />
+              <div className="flex justify-between text-sm text-muted-foreground">
+                <span>1 venda</span>
+                <span>20 vendas</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { label: "Por semana", value: salesPerWeek * 70 },
+                { label: "Por mês", value: salesPerWeek * 4 * 70 },
+                { label: "Por ano", value: salesPerWeek * 52 * 70 },
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-xl p-6 border-2 border-green-200 shadow-sm">
+                  <div className="text-sm text-muted-foreground mb-1">{item.label}</div>
+                  <div className="text-3xl font-black text-green-700">{formatCurrency(item.value)}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -245,6 +321,27 @@ const Afiliados = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-24 px-4 bg-white">
+        <div className="container mx-auto max-w-3xl">
+          <h2 className="text-3xl lg:text-5xl font-black text-center mb-12">
+            Perguntas <span className="text-green-600">frequentes</span>
+          </h2>
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqItems.map((item, i) => (
+              <AccordionItem key={i} value={`faq-${i}`} className="border-2 border-green-100 rounded-xl px-6 data-[state=open]:border-green-300 transition-colors">
+                <AccordionTrigger className="text-left font-bold hover:no-underline py-5">
+                  {item.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pb-5">
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
       {/* CTA Final */}
       <section className="py-24 px-4 bg-green-800 text-white">
         <div className="container mx-auto text-center space-y-8 max-w-3xl">
@@ -257,6 +354,9 @@ const Afiliados = () => {
           >
             🤝 Quero ser afiliado agora
           </Button>
+          <p className="text-sm opacity-80">
+            ✓ Cadastro gratuito · ✓ Sem mensalidade · ✓ Pagamento automático
+          </p>
           <p className="text-sm opacity-75">
             Dúvidas? resellr7@gmail.com · (33) 99854-2100
           </p>
