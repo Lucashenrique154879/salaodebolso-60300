@@ -287,8 +287,9 @@ const Afiliados = () => {
           </Card>
         </motion.div>
       </section>
+      {/* Scripts prontos */}
       <section className="py-24 px-4 bg-white">
-        <div className="container mx-auto max-w-4xl">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeUp} className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 space-y-4">
             <h2 className="text-3xl lg:text-5xl font-black">
               Material pronto para usar — <span className="text-green-600">só copiar e colar</span>
@@ -297,38 +298,40 @@ const Afiliados = () => {
               Coloque seu link de afiliado onde indicado e envie. Não precisa criar nada do zero.
             </p>
           </div>
-          <div className="space-y-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="space-y-6">
             {scripts.map((script, i) => (
-              <Card key={i} className="border-2 border-green-100 hover:border-green-300 transition-all">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-bold text-lg">{script.label}</h3>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="gap-2 border-green-300 text-green-700 hover:bg-green-50"
-                      onClick={() => copyToClipboard(script.text)}
-                    >
-                      <Copy className="w-4 h-4" /> Copiar
-                    </Button>
-                  </div>
-                  <pre className="whitespace-pre-wrap text-sm text-muted-foreground bg-muted/30 p-4 rounded-xl font-sans">
-                    {script.text}
-                  </pre>
-                </CardContent>
-              </Card>
+              <motion.div key={i} variants={fadeUp} custom={i}>
+                <Card className="border-2 border-green-100 hover:border-green-300 transition-all">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-bold text-lg">{script.label}</h3>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="gap-2 border-green-300 text-green-700 hover:bg-green-50"
+                        onClick={() => copyToClipboard(script.text)}
+                      >
+                        <Copy className="w-4 h-4" /> Copiar
+                      </Button>
+                    </div>
+                    <pre className="whitespace-pre-wrap text-sm text-muted-foreground bg-muted/30 p-4 rounded-xl font-sans">
+                      {script.text}
+                    </pre>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Regras */}
       <section className="py-24 px-4 bg-gradient-to-br from-green-50 to-background">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl lg:text-5xl font-black text-center mb-12">
+          <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} className="text-3xl lg:text-5xl font-black text-center mb-12">
             Regras do <span className="text-green-600">programa</span>
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          </motion.h2>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { ok: true, text: "Pagamento automático via Cakto — R$70 direto na sua conta a cada venda confirmada" },
               { ok: true, text: "Rastreamento de 30 dias — clicou hoje, comprou em até 30 dias = comissão sua" },
@@ -336,24 +339,26 @@ const Afiliados = () => {
               { ok: false, text: "Não use spam ou anúncios enganosos — divulgação em grupos sem relação com beleza ou promessas falsas desqualificam o afiliado" },
               { ok: false, text: "Não altere preço ou informações — divulgue sempre como R$197 acesso vitalício" },
             ].map((rule, i) => (
-              <Card key={i} className={`border-2 ${rule.ok ? "border-green-200 bg-green-50/30" : "border-red-200 bg-red-50/30"}`}>
-                <CardContent className="p-6 flex items-start gap-3">
-                  {rule.ok ? (
-                    <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
-                  ) : (
-                    <X className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
-                  )}
-                  <span className="text-sm">{rule.text}</span>
-                </CardContent>
-              </Card>
+              <motion.div key={i} variants={scaleIn} custom={i}>
+                <Card className={`border-2 h-full ${rule.ok ? "border-green-200 bg-green-50/30" : "border-red-200 bg-red-50/30"}`}>
+                  <CardContent className="p-6 flex items-start gap-3">
+                    {rule.ok ? (
+                      <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    ) : (
+                      <X className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+                    )}
+                    <span className="text-sm">{rule.text}</span>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="py-24 px-4 bg-white">
-        <div className="container mx-auto max-w-3xl">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={fadeUp} className="container mx-auto max-w-3xl">
           <h2 className="text-3xl lg:text-5xl font-black text-center mb-12">
             Perguntas <span className="text-green-600">frequentes</span>
           </h2>
@@ -369,28 +374,30 @@ const Afiliados = () => {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
+        </motion.div>
       </section>
 
       {/* CTA Final */}
       <section className="py-24 px-4 bg-green-800 text-white">
-        <div className="container mx-auto text-center space-y-8 max-w-3xl">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} className="container mx-auto text-center space-y-8 max-w-3xl">
           <h2 className="text-4xl lg:text-6xl font-black">Pronto para começar a ganhar?</h2>
           <p className="text-xl opacity-90">Cadastre-se gratuitamente e comece a divulgar hoje mesmo</p>
-          <Button
-            size="lg"
-            className="text-xl h-16 px-12 font-bold bg-white text-green-800 hover:bg-white/90 shadow-xl hover:scale-105 transition-all"
-            onClick={() => window.open(AFFILIATE_LINK, "_blank")}
-          >
-            🤝 Quero ser afiliado agora
-          </Button>
+          <motion.div variants={scaleIn} custom={1}>
+            <Button
+              size="lg"
+              className="text-xl h-16 px-12 font-bold bg-white text-green-800 hover:bg-white/90 shadow-xl hover:scale-105 transition-all"
+              onClick={() => window.open(AFFILIATE_LINK, "_blank")}
+            >
+              🤝 Quero ser afiliado agora
+            </Button>
+          </motion.div>
           <p className="text-sm opacity-80">
             ✓ Cadastro gratuito · ✓ Sem mensalidade · ✓ Pagamento automático
           </p>
           <p className="text-sm opacity-75">
             Dúvidas? resellr7@gmail.com · (33) 99854-2100
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Footer */}
