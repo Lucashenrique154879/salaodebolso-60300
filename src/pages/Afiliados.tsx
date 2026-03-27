@@ -91,47 +91,49 @@ const Afiliados = () => {
       {/* Hero */}
       <section className="pt-32 pb-24 px-4 bg-gradient-to-br from-green-50 via-background to-green-50/50">
         <div className="container mx-auto text-center space-y-8 max-w-5xl">
-          <h1 className="text-4xl lg:text-6xl font-black leading-tight">
+          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} className="text-4xl lg:text-6xl font-black leading-tight">
             Ganhe <span className="text-green-600">R$70</span> por venda —{" "}
             <span className="bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">
               sem estoque, sem suporte
             </span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          </motion.h1>
+          <motion.p initial="hidden" animate="visible" variants={fadeUp} custom={1} className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Divulgue o Salão de Bolso e receba automaticamente a cada venda confirmada pelo Cakto.
-          </p>
+          </motion.p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto pt-4">
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto pt-4">
             {[
               { value: "R$70", label: "por venda", icon: DollarSign },
               { value: "R$197", label: "preço do produto", icon: Banknote },
               { value: "Automático", label: "pagamento via Cakto", icon: Link2 },
               { value: "∞", label: "sem limite de vendas", icon: Infinity },
             ].map((stat, i) => (
-              <div key={i} className="p-4 bg-white rounded-xl shadow-lg border-2 border-green-100 hover:border-green-300 transition-all hover:scale-105">
+              <motion.div key={i} variants={scaleIn} custom={i} className="p-4 bg-white rounded-xl shadow-lg border-2 border-green-100 hover:border-green-300 transition-all hover:scale-105">
                 <stat.icon className="w-6 h-6 text-green-600 mx-auto mb-2" />
                 <div className="text-2xl font-black text-green-600">{stat.value}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Prova social */}
-          <div className="max-w-2xl mx-auto bg-green-800 text-white rounded-2xl px-6 py-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium shadow-lg">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3} className="max-w-2xl mx-auto bg-green-800 text-white rounded-2xl px-6 py-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium shadow-lg">
             <span className="flex items-center gap-1"><Star className="w-4 h-4 text-yellow-400 fill-yellow-400" /> 4.9/5.0</span>
             <span className="opacity-60">·</span>
             <span>50+ clientes satisfeitos</span>
             <span className="opacity-60">·</span>
             <span>Pagamento garantido pelo Cakto</span>
-          </div>
+          </motion.div>
 
-          <Button
-            size="lg"
-            className="text-xl h-16 px-10 font-bold bg-green-600 hover:bg-green-700 text-white shadow-xl hover:scale-105 transition-all"
-            onClick={() => window.open(AFFILIATE_LINK, "_blank")}
-          >
-            🤝 Quero ser afiliado
-          </Button>
+          <motion.div initial="hidden" animate="visible" variants={scaleIn} custom={4}>
+            <Button
+              size="lg"
+              className="text-xl h-16 px-10 font-bold bg-green-600 hover:bg-green-700 text-white shadow-xl hover:scale-105 transition-all"
+              onClick={() => window.open(AFFILIATE_LINK, "_blank")}
+            >
+              🤝 Quero ser afiliado
+            </Button>
+          </motion.div>
         </div>
       </section>
 
