@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, X, Copy, ArrowLeft, DollarSign, Link2, Banknote, Infinity, Target, Trophy, Star } from "lucide-react";
@@ -6,6 +7,29 @@ import { Slider } from "@/components/ui/slider";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { toast } from "@/hooks/use-toast";
 import logoImage from "@/assets/logo.png";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" },
+  }),
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: (i: number = 0) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.4, delay: i * 0.1, ease: "easeOut" },
+  }),
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
 
 const AFFILIATE_LINK = "https://app.cakto.com.br/affiliate/invite/2a65ce9f-0efe-46a6-ab5a-e08f02b2ed2c";
 
