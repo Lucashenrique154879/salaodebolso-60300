@@ -144,55 +144,57 @@ const Afiliados = () => {
       {/* Como funciona */}
       <section className="py-24 px-4 bg-white">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-3xl lg:text-5xl font-black text-center mb-16">
+          <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} className="text-3xl lg:text-5xl font-black text-center mb-16">
             Como <span className="text-green-600">funciona</span>
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          </motion.h2>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { step: 1, title: "Cadastre-se como afiliado", desc: "Acesse o painel Cakto, crie sua conta de afiliado gratuitamente em menos de 2 minutos" },
               { step: 2, title: "Pegue seu link exclusivo", desc: "O Cakto gera um link rastreável único para você. Cada venda pelo seu link é registrada automaticamente" },
               { step: 3, title: "Divulgue nos seus canais", desc: "WhatsApp, Instagram, Facebook, TikTok, grupos — qualquer canal que você já usa" },
               { step: 4, title: "Receba R$70 por venda", desc: "O Cakto processa e deposita na sua conta sem depender de ninguém" },
             ].map((item) => (
-              <div key={item.step} className="text-center space-y-4 p-6 rounded-2xl border-2 border-green-100 hover:border-green-300 bg-green-50/30 hover:shadow-xl transition-all">
+              <motion.div key={item.step} variants={scaleIn} custom={item.step - 1} className="text-center space-y-4 p-6 rounded-2xl border-2 border-green-100 hover:border-green-300 bg-green-50/30 hover:shadow-xl transition-all">
                 <div className="w-14 h-14 mx-auto rounded-full bg-green-600 text-white flex items-center justify-center text-2xl font-black">
                   {item.step}
                 </div>
                 <h3 className="text-lg font-bold">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Por que vende */}
       <section className="py-24 px-4 bg-gradient-to-br from-green-50 to-background">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-3xl lg:text-5xl font-black text-center mb-16">
+          <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} className="text-3xl lg:text-5xl font-black text-center mb-16">
             Por que o Salão de Bolso é <span className="text-green-600">fácil de vender</span>
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          </motion.h2>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer} className="grid md:grid-cols-3 gap-8">
             {[
               { icon: Target, emoji: "🎯", title: "1,5 milhão de salões no Brasil", desc: "A maioria ainda usa papel ou WhatsApp para agendar. É um mercado praticamente virgem para tecnologia." },
               { icon: DollarSign, emoji: "💰", title: "R$197 — qualquer profissional paga", desc: "É menos que um dia de trabalho para a maioria dos clientes. Objeção de preço é rara nesse nicho." },
               { icon: Trophy, emoji: "🏆", title: "Produto nichado e diferenciado", desc: "Não existe sistema de gestão assim focado em salões pequenos com esse preço e sem mensalidade." },
             ].map((card, i) => (
-              <Card key={i} className="border-2 border-green-100 hover:border-green-300 hover:shadow-xl transition-all">
-                <CardContent className="p-8 text-center space-y-4">
-                  <span className="text-4xl">{card.emoji}</span>
-                  <h3 className="text-xl font-black">{card.title}</h3>
-                  <p className="text-muted-foreground">{card.desc}</p>
-                </CardContent>
-              </Card>
+              <motion.div key={i} variants={fadeUp} custom={i}>
+                <Card className="border-2 border-green-100 hover:border-green-300 hover:shadow-xl transition-all h-full">
+                  <CardContent className="p-8 text-center space-y-4">
+                    <span className="text-4xl">{card.emoji}</span>
+                    <h3 className="text-xl font-black">{card.title}</h3>
+                    <p className="text-muted-foreground">{card.desc}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Calculadora de ganhos */}
       <section className="py-24 px-4 bg-white">
-        <div className="container mx-auto max-w-3xl text-center space-y-8">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} className="container mx-auto max-w-3xl text-center space-y-8">
           <h2 className="text-3xl lg:text-5xl font-black">
             Calcule seus <span className="text-green-600">ganhos</span> como afiliado
           </h2>
@@ -232,12 +234,12 @@ const Afiliados = () => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* O produto */}
       <section className="py-24 px-4 bg-gradient-to-br from-green-50 to-background">
-        <div className="container mx-auto max-w-3xl">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={fadeUp} className="container mx-auto max-w-3xl">
           <h2 className="text-3xl lg:text-5xl font-black text-center mb-12">
             O produto que você vai <span className="text-green-600">divulgar</span>
           </h2>
@@ -283,10 +285,8 @@ const Afiliados = () => {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </motion.div>
       </section>
-
-      {/* Scripts prontos */}
       <section className="py-24 px-4 bg-white">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 space-y-4">
