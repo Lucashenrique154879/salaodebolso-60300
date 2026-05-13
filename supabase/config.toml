@@ -1,0 +1,4 @@
+project_id = "cjzsiqnbelmmnpretxjr"
+
+[functions.sentiment-analysis]
+verify_jwt = false

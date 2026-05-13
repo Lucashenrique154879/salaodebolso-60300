@@ -1,0 +1,326 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* ─── Design System ──────────────────────────────────────────────────────── */
+/* All colors in HSL. Primary: Deep Rose. Secondary: Champagne Gold.          */
+/* Fonts: Raleway (headings) + Lora (body).                                   */
+
+@layer base {
+  :root {
+    /* Surfaces */
+    --background: 280 40% 97%;
+    --foreground: 270 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 270 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 30% 12%;
+
+    /* Brand */
+    --primary: 270 80% 46%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 275 95% 66%;
+
+    --secondary: 288 60% 70%;
+    --secondary-foreground: 270 30% 12%;
+
+    /* Neutrals */
+    --muted: 280 22% 93%;
+    --muted-foreground: 270 14% 40%;
+
+    --accent: 288 45% 90%;
+    --accent-foreground: 270 30% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 280 18% 86%;
+    --input: 280 18% 86%;
+    --ring: 270 80% 46%;
+
+    --radius: 0.75rem;
+
+    /* Design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(270 80% 46%), hsl(288 60% 70%));
+    --gradient-hero: linear-gradient(180deg, hsl(280 40% 97%), hsl(288 28% 95%));
+    --gradient-accent: linear-gradient(135deg, hsl(288 60% 70% / 0.16), hsl(270 80% 46% / 0.12));
+    --shadow-glow: 0 0 60px hsl(275 95% 66% / 0.22), 0 0 34px hsl(270 80% 46% / 0.14);
+    --shadow-premium: 0 26px 80px -18px hsl(270 30% 12% / 0.22);
+    --shadow-gold: 0 12px 36px hsl(288 60% 70% / 0.18);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Sidebar */
+    --sidebar-background: 280 40% 97%;
+    --sidebar-foreground: 270 30% 12%;
+    --sidebar-primary: 270 80% 46%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 288 45% 90%;
+    --sidebar-accent-foreground: 270 30% 12%;
+    --sidebar-border: 280 18% 86%;
+    --sidebar-ring: 270 80% 46%;
+    color-scheme: light;
+  }
+
+  .dark {
+    --background: 270 34% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 270 30% 14%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 270 30% 14%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 275 95% 66%;
+    --primary-foreground: 270 34% 10%;
+
+    --secondary: 288 60% 70%;
+    --secondary-foreground: 270 34% 10%;
+
+    --muted: 270 22% 18%;
+    --muted-foreground: 288 25% 86%;
+
+    --accent: 270 22% 18%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 34 20% 96%;
+
+    --border: 270 18% 24%;
+    --input: 270 18% 24%;
+    --ring: 275 95% 66%;
+
+    --sidebar-background: 270 34% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 275 95% 66%;
+    --sidebar-primary-foreground: 270 34% 10%;
+    --sidebar-accent: 270 22% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 270 18% 24%;
+    --sidebar-ring: 275 95% 66%;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  *, *::before, *::after {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans",
+      "Liberation Sans", sans-serif;
+  }
+}
+
+/* ─── Utility Animations ────────────────────────────────────────────────── */
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out both;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out both;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out both;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  /* dot matrix background pattern */
+  .bg-dots {
+    background-image: radial-gradient(circle, hsl(var(--secondary) / 0.30) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+    filter: blur(10px);
+    transition:
+      opacity 700ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      filter 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform, filter;
+  }
+
+  .reveal.is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0px);
+  }
+
+  .neon-hover {
+    position: relative;
+    transition: var(--transition-smooth);
+  }
+
+  .neon-hover::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: calc(var(--radius) + 8px);
+    background: linear-gradient(120deg, hsl(var(--primary-glow) / 0.0), hsl(var(--secondary) / 0.55), hsl(var(--primary) / 0.55));
+    opacity: 0;
+    filter: blur(16px);
+    transition: opacity 300ms ease;
+    pointer-events: none;
+  }
+
+  .neon-hover:hover::before,
+  .neon-hover:focus-visible::before {
+    opacity: 1;
+  }
+
+  .gradient-pan {
+    background-size: 200% 200%;
+    animation: gradient-pan 6s ease infinite;
+  }
+
+  .btn-micro {
+    transition: transform 180ms ease, box-shadow 220ms ease, filter 220ms ease;
+  }
+
+  .btn-micro:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-gold);
+    filter: saturate(1.05);
+  }
+
+  .btn-micro:active {
+    transform: translateY(0px) scale(0.98);
+  }
+
+  .tech-scan {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .tech-scan > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .tech-scan::before {
+    content: "";
+    position: absolute;
+    inset: -24px;
+    z-index: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 0%,
+      hsl(var(--secondary) / 0.10) 35%,
+      hsl(var(--primary-glow) / 0.18) 50%,
+      hsl(var(--secondary) / 0.10) 65%,
+      transparent 100%
+    );
+    transform: translate3d(-60%, 0, 0);
+    animation: tech-sweep 5.5s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+    will-change: transform;
+    pointer-events: none;
+  }
+
+  .tech-scan::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 7px,
+      hsl(var(--foreground) / 0.06) 7px,
+      hsl(var(--foreground) / 0.06) 8px
+    );
+    opacity: 0.22;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes gradient-pan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes tech-sweep {
+  0% { transform: translate3d(-65%, 0, 0); }
+  55% { transform: translate3d(65%, 0, 0); }
+  100% { transform: translate3d(65%, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .tech-scan::before {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}
